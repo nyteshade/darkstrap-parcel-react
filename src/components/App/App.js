@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Progress from '../Copland/Progress/Progress';
 import logo from '../../imgs/logo.svg';
 import '../../css/components/App/App.css';
 
@@ -13,6 +14,7 @@ class App extends Component {
         <p className="intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        <div style={{width:'320px', display:'inline-block'}}><Progress/></div>
       </div>
     );
   }
