@@ -1,323 +1,150 @@
-
-div.progress {
- $trackDisplay: inline-block;
- $barDisplay: inline-block;
- $progress: 25%;
- $barHeight: 30px;
- $borderWidth: 1px;
- 
- border: $borderWidth solid black;
- font-size: 0;
- position: relative;  
- height: $barHeight;
- box-sizing: border-box;
-
- &.complete {
-   .track {
-     display: none;
-   }
- }
-
- .bar, .track {
-   display: inline-block;
-   box-sizing: border-box;
-   position: relative;
-   height: 100%;
-
-   .slice {
-     position: relative;
-     height: 100%;
-     width: 1px;
-     display:inline-block;    
-     overflow: hidden;      
-   }    
- }
-
- .bar {
-   width: $progress;
-   display: $barDisplay;
-
-   div.slice1 {
-     background-color: hsl(240, 50%, 60%);
-     width: 1px;
-   }
-
-   div.slice2 {
-     width: 1px;
-     background-image:
-       linear-gradient(180deg,
-         hsl(240, 50%, 60%) 10%, 
-         hsl(240, 100%, 80%) 20%, 
-         hsl(240, 100%, 90%) 30%, 
-         hsl(0, 0%, 93%) 40%, 
-         hsl(0, 0%, 93%) 50%, 
-         hsl(0, 0%, 93%) 60%, 
-         hsl(240, 100%, 90%) 70%, 
-         hsl(240, 100%, 80%) 80%, 
-         hsl(240, 50%, 60%) 90%, 
-         hsl(240, 50%, 40%) 100%
-       );
-   }
-
-   div.sliceN {
-     width: calc(100% - 5px);
-     background-image:
-       linear-gradient(180deg,
-         hsl(240, 50%, 40%) 10%, 
-         hsl(240, 50%, 60%) 20%, 
-         hsl(240, 100%, 80%) 30%, 
-         hsl(240, 100%, 90%) 40%, 
-         hsl(0, 0%, 93%) 50%, 
-         hsl(240, 100%, 90%) 60%, 
-         hsl(240, 100%, 80%) 70%, 
-         hsl(240, 50%, 60%) 80%, 
-         hsl(240, 50%, 40%) 90%,
-         hsl(240, 100%, 16%) 100%
-       );
-   }
-
-   div.slice3 {
-     width: 1px;
-     background-image:
-       linear-gradient(180deg,
-         hsl(240, 50%, 40%) 10%, 
-         hsl(240, 50%, 60%) 20%, 
-         hsl(240, 100%, 80%) 30%, 
-         hsl(240, 100%, 90%) 40%, 
-         hsl(240, 100%, 90%) 50%, 
-         hsl(240, 100%, 90%) 60%, 
-         hsl(240, 100%, 80%) 70%, 
-         hsl(240, 50%, 60%) 80%, 
-         hsl(240, 50%, 40%) 90%,
-         hsl(240, 100%, 16%) 100%
-       );
-   }
-
-   div.slice4 {
-     width: 1px;
-     background-image:
-       linear-gradient(180deg,
-         hsl(240, 50%, 40%) 10%, 
-         hsl(240, 50%, 60%) 20%, 
-         hsl(240, 50%, 40%) 30%, 
-         hsl(240, 50%, 40%) 40%, 
-         hsl(240, 50%, 40%) 50%, 
-         hsl(240, 50%, 40%) 60%, 
-         hsl(240, 50%, 40%) 70%, 
-         hsl(240, 50%, 40%) 80%, 
-         hsl(240, 50%, 40%) 90%,
-         hsl(240, 100%, 16%) 100%
-       );
-   }
-
-   div.slice5 {
-     width: 1px;
-     background-image:
-       linear-gradient(180deg,
-         hsl(240, 50%, 40%) 10%, 
-         hsl(240, 100%, 16%) 20%,
-         hsl(240, 100%, 16%) 30%,
-         hsl(240, 100%, 16%) 40%,
-         hsl(240, 100%, 16%) 50%,
-         hsl(240, 100%, 16%) 60%,
-         hsl(240, 100%, 16%) 70%,
-         hsl(240, 100%, 16%) 80%,
-         hsl(240, 100%, 16%) 90%,
-         hsl(240, 100%, 16%) 100%
-       );
-   }    
- }
-
- .track {
-   width: calc(100% - #{$progress});
-   display: $trackDisplay;
-
-   div.barborder {
-     background-color: hsl(0, 0, 0);
-     width: 1px;
-   }
-
-   div.barshadow {
-     background-color: hsl(0, 0, 33%);
-     width: 1px;
-   }
-
-   div.trackstart {
-     background-color: hsl(0, 0, 53%)
-   }
-
-   div.trackmiddle {
-     width: calc(100% - 4px);
-     background-image:
-       linear-gradient(180deg,
-         hsl(0, 0, 53%) 10%,
-         hsl(0, 0, 73%) 20%,
-         hsl(0, 0, 73%) 30%,
-         hsl(0, 0, 73%) 40%,
-         hsl(0, 0, 73%) 50%,
-         hsl(0, 0, 73%) 60%,
-         hsl(0, 0, 73%) 70%,
-         hsl(0, 0, 73%) 80%,
-         hsl(0, 0, 73%) 90%,
-         hsl(0, 0, 53%) 100%
-       );
-   }
-
-   div.trackmiddle {
-     background-image:
-       linear-gradient(180deg,
-         hsl(0, 0, 73%) 10%,
-         hsl(0, 0, 87%) 20%,
-         hsl(0, 0, 87%) 30%,
-         hsl(0, 0, 87%) 40%,
-         hsl(0, 0, 87%) 50%,
-         hsl(0, 0, 87%) 60%,
-         hsl(0, 0, 87%) 70%,
-         hsl(0, 0, 87%) 80%,
-         hsl(0, 0, 87%) 90%,
-         hsl(0, 0, 87%) 100%
-       );
-   }
- }
- 
- @for $i from 0 to 100 {
-   &.p#{$i} {
-     $progress: $i * 1%;
-     $trackDisplay: inline-block;
-     $barDisplay: inline-block;
-
-     @if $progress < 1% {
-       $barDisplay: none;
-       $trackDisplay: inline-block;
-     }
-
-     @if $progress > 99% {
-       $barDisplay: inline-block;
-       $trackDisplay: none;
-     }
-     
-     .bar {
-       width: $progress;
-       display: $barDisplay;
-     }
-     
-     .track {
-       width: calc(100% - #{$progress});
-       display: $trackDisplay;
-     }
-   }
- }  
-
- $schemeDefault: default 240;
- $schemeYellow: gold 30;
- $schemeLime: lime 60;
- $schemeGreen: green 90;
- $schemeDarkerGreen: darkerGreen 120;
- $schemeTiel: tiel 160;
- $schemeLightBlue: lightBlue 190;
- $schemeBrightBlue: brightBlue 210;
- $schemeNavyBlue: navyBlue 240;
- $schemePurple: purple 270;
- $schemePink: pink 300;
- $schemeMagenta: magenta 330;
- $schemeRed: red 0;
-
- $schemes: $schemeDefault $schemeYellow $schemeLime $schemeGreen $schemeDarkerGreen $schemeTiel $schemeLightBlue $schemeBrightBlue $schemeNavyBlue $schemePurple $schemePink $schemeMagenta $schemeRed;  
- @each $scheme in $schemes {
-   $colorClass: nth($scheme, 1);
-   $barHue: nth($scheme, 2);
-   &.#{$colorClass} {
-     .bar {
-       div.slice1 {
-         background-color: hsl($barHue, 50%, 60%);
-         width: 1px;
-       }
-
-       div.slice2 {
-         width: 1px;
-         background-image:
-           linear-gradient(180deg,
-             hsl($barHue, 50%, 60%) 10%, 
-             hsl($barHue, 100%, 80%) 20%, 
-             hsl($barHue, 100%, 90%) 30%, 
-             hsl(0, 0%, 93%) 40%, 
-             hsl(0, 0%, 93%) 50%, 
-             hsl(0, 0%, 93%) 60%, 
-             hsl($barHue, 100%, 90%) 70%, 
-             hsl($barHue, 100%, 80%) 80%, 
-             hsl($barHue, 50%, 60%) 90%, 
-             hsl($barHue, 50%, 40%) 100%
-           );
-       }
-
-       div.sliceN {
-         width: calc(100% - 5px);
-         background-image:
-           linear-gradient(180deg,
-             hsl($barHue, 50%, 40%) 10%, 
-             hsl($barHue, 50%, 60%) 20%, 
-             hsl($barHue, 100%, 80%) 30%, 
-             hsl($barHue, 100%, 90%) 40%, 
-             hsl(0, 0%, 93%) 50%, 
-             hsl($barHue, 100%, 90%) 60%, 
-             hsl($barHue, 100%, 80%) 70%, 
-             hsl($barHue, 50%, 60%) 80%, 
-             hsl($barHue, 50%, 40%) 90%,
-             hsl($barHue, 100%, 16%) 100%
-           );
-       }
-
-       div.slice3 {
-         width: 1px;
-         background-image:
-           linear-gradient(180deg,
-             hsl($barHue, 50%, 40%) 10%, 
-             hsl($barHue, 50%, 60%) 20%, 
-             hsl($barHue, 100%, 80%) 30%, 
-             hsl($barHue, 100%, 90%) 40%, 
-             hsl($barHue, 100%, 90%) 50%, 
-             hsl($barHue, 100%, 90%) 60%, 
-             hsl($barHue, 100%, 80%) 70%, 
-             hsl($barHue, 50%, 60%) 80%, 
-             hsl($barHue, 50%, 40%) 90%,
-             hsl($barHue, 100%, 16%) 100%
-           );
-       }
-
-       div.slice4 {
-         width: 1px;
-         background-image:
-           linear-gradient(180deg,
-             hsl($barHue, 50%, 40%) 10%, 
-             hsl($barHue, 50%, 60%) 20%, 
-             hsl($barHue, 50%, 40%) 30%, 
-             hsl($barHue, 50%, 40%) 40%, 
-             hsl($barHue, 50%, 40%) 50%, 
-             hsl($barHue, 50%, 40%) 60%, 
-             hsl($barHue, 50%, 40%) 70%, 
-             hsl($barHue, 50%, 40%) 80%, 
-             hsl($barHue, 50%, 40%) 90%,
-             hsl($barHue, 100%, 16%) 100%
-           );
-       }
-
-       div.slice5 {
-         width: 1px;
-         background-image:
-           linear-gradient(180deg,
-             hsl($barHue, 50%, 40%) 10%, 
-             hsl($barHue, 100%, 16%) 20%,
-             hsl($barHue, 100%, 16%) 30%,
-             hsl($barHue, 100%, 16%) 40%,
-             hsl($barHue, 100%, 16%) 50%,
-             hsl($barHue, 100%, 16%) 60%,
-             hsl($barHue, 100%, 16%) 70%,
-             hsl($barHue, 100%, 16%) 80%,
-             hsl($barHue, 100%, 16%) 90%,
-             hsl($barHue, 100%, 16%) 100%
-           );
-       }    
-     }
-   }
- }
+:global div.progress {
+    $trackDisplay: inline-block;
+    $barDisplay: inline-block;
+    $progress: 25%;
+    $barHeight: 30px;
+    $borderWidth: 1px;
+    border: $borderWidth solid black;
+    font-size: 0;
+    position: relative;
+    height: $barHeight;
+    box-sizing: border-box;
+    &.complete {
+        .track {
+            display: none;
+        }
+    }
+     :global .bar,
+     :global .track {
+        display: inline-block;
+        box-sizing: border-box;
+        position: relative;
+        height: 100%;
+        .slice {
+            position: relative;
+            height: 100%;
+            width: 1px;
+            display: inline-block;
+            overflow: hidden;
+        }
+    }
+     :global .bar {
+        width: $progress;
+        display: $barDisplay;
+         :global div.slice1 {
+            background-color: hsl(240, 50%, 60%);
+            width: 1px;
+        }
+         :global div.slice2 {
+            width: 1px;
+            background-image: linear-gradient(180deg, hsl(240, 50%, 60%) 10%, hsl(240, 100%, 80%) 20%, hsl(240, 100%, 90%) 30%, hsl(0, 0%, 93%) 40%, hsl(0, 0%, 93%) 50%, hsl(0, 0%, 93%) 60%, hsl(240, 100%, 90%) 70%, hsl(240, 100%, 80%) 80%, hsl(240, 50%, 60%) 90%, hsl(240, 50%, 40%) 100%);
+        }
+         :global div.sliceN {
+            width: calc(100% - 5px);
+            background-image: linear-gradient(180deg, hsl(240, 50%, 40%) 10%, hsl(240, 50%, 60%) 20%, hsl(240, 100%, 80%) 30%, hsl(240, 100%, 90%) 40%, hsl(0, 0%, 93%) 50%, hsl(240, 100%, 90%) 60%, hsl(240, 100%, 80%) 70%, hsl(240, 50%, 60%) 80%, hsl(240, 50%, 40%) 90%, hsl(240, 100%, 16%) 100%);
+        }
+         :global div.slice3 {
+            width: 1px;
+            background-image: linear-gradient(180deg, hsl(240, 50%, 40%) 10%, hsl(240, 50%, 60%) 20%, hsl(240, 100%, 80%) 30%, hsl(240, 100%, 90%) 40%, hsl(240, 100%, 90%) 50%, hsl(240, 100%, 90%) 60%, hsl(240, 100%, 80%) 70%, hsl(240, 50%, 60%) 80%, hsl(240, 50%, 40%) 90%, hsl(240, 100%, 16%) 100%);
+        }
+         :global div.slice4 {
+            width: 1px;
+            background-image: linear-gradient(180deg, hsl(240, 50%, 40%) 10%, hsl(240, 50%, 60%) 20%, hsl(240, 50%, 40%) 30%, hsl(240, 50%, 40%) 40%, hsl(240, 50%, 40%) 50%, hsl(240, 50%, 40%) 60%, hsl(240, 50%, 40%) 70%, hsl(240, 50%, 40%) 80%, hsl(240, 50%, 40%) 90%, hsl(240, 100%, 16%) 100%);
+        }
+         :global div.slice5 {
+            width: 1px;
+            background-image: linear-gradient(180deg, hsl(240, 50%, 40%) 10%, hsl(240, 100%, 16%) 20%, hsl(240, 100%, 16%) 30%, hsl(240, 100%, 16%) 40%, hsl(240, 100%, 16%) 50%, hsl(240, 100%, 16%) 60%, hsl(240, 100%, 16%) 70%, hsl(240, 100%, 16%) 80%, hsl(240, 100%, 16%) 90%, hsl(240, 100%, 16%) 100%);
+        }
+    }
+     :global .track {
+        width: calc(100% - #{$progress});
+        display: $trackDisplay;
+         :global div.barborder {
+            background-color: hsl(0, 0, 0);
+            width: 1px;
+        }
+         :global div.barshadow {
+            background-color: hsl(0, 0, 33%);
+            width: 1px;
+        }
+         :global div.trackstart {
+            background-color: hsl(0, 0, 53%)
+        }
+         :global div.trackmiddle {
+            width: calc(100% - 4px);
+            background-image: linear-gradient(180deg, hsl(0, 0, 53%) 10%, hsl(0, 0, 73%) 20%, hsl(0, 0, 73%) 30%, hsl(0, 0, 73%) 40%, hsl(0, 0, 73%) 50%, hsl(0, 0, 73%) 60%, hsl(0, 0, 73%) 70%, hsl(0, 0, 73%) 80%, hsl(0, 0, 73%) 90%, hsl(0, 0, 53%) 100%);
+        }
+         :global div.trackmiddle {
+            background-image: linear-gradient(180deg, hsl(0, 0, 73%) 10%, hsl(0, 0, 87%) 20%, hsl(0, 0, 87%) 30%, hsl(0, 0, 87%) 40%, hsl(0, 0, 87%) 50%, hsl(0, 0, 87%) 60%, hsl(0, 0, 87%) 70%, hsl(0, 0, 87%) 80%, hsl(0, 0, 87%) 90%, hsl(0, 0, 87%) 100%);
+        }
+    }
+    @for $i from 0 to 100 {
+        &.p#{$i} {
+            $progress: $i * 1%;
+            $trackDisplay: inline-block;
+            $barDisplay: inline-block;
+            @if $progress < 1% {
+                $barDisplay: none;
+                $trackDisplay: inline-block;
+            }
+            @if $progress>99% {
+                $barDisplay: inline-block;
+                $trackDisplay: none;
+            }
+            .bar {
+                width: $progress;
+                display: $barDisplay;
+            }
+            .track {
+                width: calc(100% - #{$progress});
+                display: $trackDisplay;
+            }
+        }
+    }
+    $schemeDefault: default 240;
+    $schemeYellow: gold 30;
+    $schemeLime: lime 60;
+    $schemeGreen: green 90;
+    $schemeDarkerGreen: darkerGreen 120;
+    $schemeTiel: tiel 160;
+    $schemeLightBlue: lightBlue 190;
+    $schemeBrightBlue: brightBlue 210;
+    $schemeNavyBlue: navyBlue 240;
+    $schemePurple: purple 270;
+    $schemePink: pink 300;
+    $schemeMagenta: magenta 330;
+    $schemeRed: red 0;
+    $schemes: $schemeDefault $schemeYellow $schemeLime $schemeGreen $schemeDarkerGreen $schemeTiel $schemeLightBlue $schemeBrightBlue $schemeNavyBlue $schemePurple $schemePink $schemeMagenta $schemeRed;
+    @each $scheme in $schemes {
+        $colorClass: nth($scheme, 1);
+        $barHue: nth($scheme, 2);
+        &.#{$colorClass} {
+            .bar {
+                 :global div.slice1 {
+                    background-color: hsl($barHue, 50%, 60%);
+                    width: 1px;
+                }
+                 :global div.slice2 {
+                    width: 1px;
+                    background-image: linear-gradient(180deg, hsl($barHue, 50%, 60%) 10%, hsl($barHue, 100%, 80%) 20%, hsl($barHue, 100%, 90%) 30%, hsl(0, 0%, 93%) 40%, hsl(0, 0%, 93%) 50%, hsl(0, 0%, 93%) 60%, hsl($barHue, 100%, 90%) 70%, hsl($barHue, 100%, 80%) 80%, hsl($barHue, 50%, 60%) 90%, hsl($barHue, 50%, 40%) 100%);
+                }
+                 :global div.sliceN {
+                    width: calc(100% - 5px);
+                    background-image: linear-gradient(180deg, hsl($barHue, 50%, 40%) 10%, hsl($barHue, 50%, 60%) 20%, hsl($barHue, 100%, 80%) 30%, hsl($barHue, 100%, 90%) 40%, hsl(0, 0%, 93%) 50%, hsl($barHue, 100%, 90%) 60%, hsl($barHue, 100%, 80%) 70%, hsl($barHue, 50%, 60%) 80%, hsl($barHue, 50%, 40%) 90%, hsl($barHue, 100%, 16%) 100%);
+                }
+                 :global div.slice3 {
+                    width: 1px;
+                    background-image: linear-gradient(180deg, hsl($barHue, 50%, 40%) 10%, hsl($barHue, 50%, 60%) 20%, hsl($barHue, 100%, 80%) 30%, hsl($barHue, 100%, 90%) 40%, hsl($barHue, 100%, 90%) 50%, hsl($barHue, 100%, 90%) 60%, hsl($barHue, 100%, 80%) 70%, hsl($barHue, 50%, 60%) 80%, hsl($barHue, 50%, 40%) 90%, hsl($barHue, 100%, 16%) 100%);
+                }
+                 :global div.slice4 {
+                    width: 1px;
+                    background-image: linear-gradient(180deg, hsl($barHue, 50%, 40%) 10%, hsl($barHue, 50%, 60%) 20%, hsl($barHue, 50%, 40%) 30%, hsl($barHue, 50%, 40%) 40%, hsl($barHue, 50%, 40%) 50%, hsl($barHue, 50%, 40%) 60%, hsl($barHue, 50%, 40%) 70%, hsl($barHue, 50%, 40%) 80%, hsl($barHue, 50%, 40%) 90%, hsl($barHue, 100%, 16%) 100%);
+                }
+                 :global div.slice5 {
+                    width: 1px;
+                    background-image: linear-gradient(180deg, hsl($barHue, 50%, 40%) 10%, hsl($barHue, 100%, 16%) 20%, hsl($barHue, 100%, 16%) 30%, hsl($barHue, 100%, 16%) 40%, hsl($barHue, 100%, 16%) 50%, hsl($barHue, 100%, 16%) 60%, hsl($barHue, 100%, 16%) 70%, hsl($barHue, 100%, 16%) 80%, hsl($barHue, 100%, 16%) 90%, hsl($barHue, 100%, 16%) 100%);
+                }
+            }
+        }
+    }
 }

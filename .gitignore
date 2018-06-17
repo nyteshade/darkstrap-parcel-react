@@ -20,3 +20,10 @@ yarn-error.log*
 
 # generated css
 src/css/**/*.css
+
+# lock files
+yarn.lock
+package-lock.json
+
+# parcel cache
+.cache

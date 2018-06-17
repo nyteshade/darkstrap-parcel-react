@@ -1,20 +1,26 @@
 import React, { Component } from 'react';
-import Progress from '../Copland/Progress/Progress';
+import Progress from '../Copland/Progress';
 import logo from '../../imgs/logo.svg';
-import '../../css/components/App/App.css';
+import styles from './App.scss';
 
 class App extends Component {
+  componentDidMount() {
+    this.setState({percent: 0})
+  }
+
   render() {
     return (
-      <div className="App">
-        <div className="header">
-          <img src={logo} className="logo" alt="logo" />
+      <div className={styles.App}>
+        <div className={styles.header}>
+          <img src={logo} className={styles.logo} alt="logo" />
           <h2>Welcome to React</h2>
         </div>
-        <p className="intro">
+        <p className={styles.intro}>
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <div style={{width:'320px', display:'inline-block'}}><Progress/></div>
+        <div className={styles.progress_container}>
+          <Progress percent={((this.state && this.state.percent) || 23)}/>
+        </div>
       </div>
     );
   }
