@@ -5,7 +5,7 @@
     "dependencies": {
         "graphql": "^0.13.2",
         "graphql-yoga": "^1.14.8",
-        "ne-schemata": "^1.10.3",
+        "ne-schemata": "^2.4.0",
         "react": "^16.4.1",
         "react-dom": "^16.4.1"
     },
